@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoThreads Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+<body class="quiz-page">
+
+     <!-- Navigation Bar -->
+ <header>
+    <div class="logo">
+      <img src="logo3.png" alt="EcoThreads logo" style="height: 70px;">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="calculator.html">Footprint Calculator</a></li>
+        <li><a href="tips.html">Sustainable Tips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <!-- Instruction Modal -->
+  <div id="instructionModal" class="modal">
+    <div class="modal-content">
+      <h2>Welcome to the Sustainability Quiz!</h2>
+      <p>Test your knowledge with 15 questions about sustainable fashion. You may try again once you are done with the quiz. Good luck!.</p>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+  </div>
+
+ <!-- Main Quiz Container -->
+<main id="quizContainer" style="display: none;">
+    <h2 style="text-align:center;">Sustainability Quiz</h2>
+    <form id="quizForm"></form>
+  </main>  
+
+<!-- Unanswered Questions Modal -->
+<div id="unansweredModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3>Oops!</h3>
+      <p>Please answer all questions before submitting the quiz.</p>
+      <button onclick="closeUnansweredModal()" class="start-btn">Okay</button>
+    </div>
+  </div>
+  
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 EcoThreads. All rights reserved.</p>
+      </footer>
+  
+
+<!-- Result Modal -->
+<div id="resultModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Your Score</h2>
+      <p id="scoreText"></p>
+      <button onclick="retryQuiz()">Try Again</button>
+      <button onclick="reviewAnswers()">Review Answers</button>
+    </div>
+  </div>
+  
+
+  <script src="script.js"></script>
+
+</body>
+</html>

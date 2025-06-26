@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoThreads - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="homepage">
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">
+      <img src="logo3.png" alt="EcoThreads logo" style="height: 70px;" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="calculator.html">Footprint Calculator</a></li>
+        <li><a href="tips.html">Sustainable Tips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECTION 1: What is Sustainable Fashion -->
+  <section class="overview section-box">
+    <h2>What is Sustainable Fashion?</h2>
+    <p style="text-align:center; max-width: 700px; margin: 0 auto 30px;">
+      Sustainable fashion means choosing clothing that’s kind to people and the planet. Hover over the cards to learn more!
+    </p>
+  
+    <div class="card-grid">
+      <div class="flip-card fade-in">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="materials.png" alt="Eco Materials Icon">
+            <p>Eco-Friendly Materials</p>
+          </div>
+          <div class="flip-back">
+            <p>Uses organic, natural, and recycled fabrics that reduce water, energy, and chemical use.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="flip-card fade-in">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="ethics.png" alt="Ethical Production Icon">
+            <p>Ethical Production</p>
+          </div>
+          <div class="flip-back">
+            <p>Promotes fair wages, safe working conditions, and labor transparency throughout the supply chain.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="flip-card fade-in">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="slowfashion.png" alt="Slow Fashion Icon">
+            <p>Slow Fashion</p>
+          </div>
+          <div class="flip-back">
+            <p>Focuses on durability and timeless styles instead of fast-changing fashion trends.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="flip-card fade-in">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="reuse.png" alt="Circular Design Icon">
+            <p>Circular Design</p>
+          </div>
+          <div class="flip-back">
+            <p>Encourages reusing, repairing, and recycling garments to avoid unnecessary waste.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="flip-card fade-in">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="nowaste.png" alt="Minimal Waste Icon">
+            <p>Minimal Waste</p>
+          </div>
+          <div class="flip-back">
+            <p>Reduces textile pollution through better design, low-impact dyes, and mindful consumption.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- SECTION 2: Why Sustainable Fashion -->
+  <section class="section-box overview">
+    <h2>Why Sustainable Fashion?</h2>
+    <p>
+      Fashion contributes to pollution and waste. Learn how you can make a difference with informed choices.
+    </p>
+    <div class="stats">
+      <div class="stat-box"><h3>92M</h3><p>Tonnes of textile waste produced yearly</p></div>
+      <div class="stat-box"><h3>2,700L</h3><p>Water needed for one cotton t-shirt</p></div>
+      <div class="stat-box"><h3>10%</h3><p>Global carbon emissions from fashion</p></div>
+    </div>
+  </section>
+
+
+  <!-- Section 3: Bar Chart -->
+  <section class="chart-section section-box">
+    <h2>Water Usage by Fabric Type</h2>
+    <canvas id="waterChart"></canvas>
+  </section>
+
+<!-- Section 4: Pie Chart -->
+<section class="chart-section section-box">
+  <h2>CO₂ Emissions by Fashion Categories</h2>
+  <div class="small-chart">
+    <canvas id="co2Chart"></canvas>
+  </div>
+</section>
+
+<!-- Section 5: Line Chart -->
+<section class="chart-section section-box">
+  <h2>Fashion Waste Over the Years</h2>
+  <canvas id="wasteChart"></canvas>
+</section>
+
+  <!-- SECTION 6: Sustainable Brands  -->
+  <section class="section-box brand-section">
+    <h2>Sustainable Fashion Brands from Malaysia</h2>
+    <p style="text-align:center; max-width: 700px; margin: 0 auto 30px;">
+      Click on the card to visit their website!
+    </p>
+    <div class="brand-cards">
+  
+      <!-- Card 1: FERN -->
+      <div class="brand-card">
+        <a href="https://fern.gallery/?fbclid=PAZXh0bgNhZW0CMTEAAacKgXqWdKbws1QoIM84aW71hU-XxIHAogYxkM5Cu4QcNuPjxrBePqEa5dIcig_aem_cyz2PWj43OoJMynyvsRWRQ" target="_blank">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>FERN</h3>
+            </div>
+            <div class="card-back">
+              <img src="fern-logo.png" alt="FERN Logo">
+              <p class="brand-desc">Local Malaysian label crafting timeless, sustainable silhouettes from natural fabrics.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Card 2: Terrae -->
+      <div class="brand-card">
+        <a href="https://shopterrae.com/" target="_blank">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Terrae</h3>
+            </div>
+            <div class="card-back">
+              <img src="terrae-logo.png" alt="Terrae Logo">
+              <p class="brand-desc">Earth-loving brand making handcrafted garments from ethical materials.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Card 3: Wustler -->
+      <div class="brand-card">
+        <a href="https://wustler.co/" target="_blank">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Wustler</h3>
+            </div>
+            <div class="card-back">
+              <img src="wustler-logo.png" alt="Wustler Logo">
+              <p class="brand-desc">Minimalist fashion using natural dyes and biodegradable textiles.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Card 4: LI's Atelier -->
+      <div class="brand-card">
+        <a href="https://lisatelier.co/collections/new-in-1" target="_blank">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>LI's Atelier</h3>
+            </div>
+            <div class="card-back">
+              <img src="lisatelier-logo.png" alt="LI's Atelier Logo">
+              <p class="brand-desc">Independent designer studio focused on upcycled and artisanal techniques.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <!-- SECTION 7: Conclusion -->
+  <section class="conclusion-section section-box">
+    <h2>What Can You Do?</h2>
+    <p>
+      The journey to sustainable fashion doesn’t require a complete wardrobe overhaul. You can start small—buy less, choose well, and make it last.
+    </p>
+    <p>
+      Try out our interactive tools like the <a href="calculator.html"><strong>Footprint Calculator</strong></a> and <a href="quiz.html"><strong>Sustainability Quiz</strong></a> to reflect on your habits and discover ways to improve.
+    </p>
+  
+    <div class="conclusion-buttons">
+      <a href="tips.html" class="start-btn">Explore Sustainable Tips</a>
+      <a href="calculator.html" class="start-btn">Calculate Your Impact</a>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EcoThreads. All rights reserved.</p>
+  </footer>
+
+<!-- Chart.js Loader -->
+<script>
+  // Set global chart options
+  Chart.defaults.font.family = 'Comfortaa, sans-serif';
+  Chart.defaults.color = '#2e7d32';
+
+  // Water Usage (Bar Chart)
+  const waterCtx = document.getElementById('waterChart').getContext('2d');
+  new Chart(waterCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Cotton', 'Linen', 'Polyester', 'Wool', 'Hemp'],
+      datasets: [{
+        label: 'Litres of Water per kg',
+        data: [2700, 2500, 125, 1700, 300],
+        backgroundColor: '#81c784',
+        hoverBackgroundColor: '#66bb6a',
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        tooltip: { enabled: true },
+        legend: { display: false },
+        title: {
+          display: false
+        }
+      },
+      animation: {
+        duration: 1200,
+        easing: 'easeOutBounce'
+      }
+    }
+  });
+
+  // CO2 Emissions (Pie Chart)
+  const co2Ctx = document.getElementById('co2Chart').getContext('2d');
+  new Chart(co2Ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Fast Fashion', 'Luxury Fashion', 'Footwear', 'Accessories'],
+      datasets: [{
+        data: [60, 20, 15, 5],
+        backgroundColor: ['#7eb41c', '#9ec577', '#9ed864', '#77c57f'],
+        hoverOffset: 10
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        tooltip: { enabled: true },
+        legend: {
+          position: 'bottom'
+        }
+      },
+      animation: {
+        animateRotate: true,
+        duration: 1000
+      }
+    }
+  });
+
+  // Fashion Waste (Line Chart)
+  const wasteCtx = document.getElementById('wasteChart').getContext('2d');
+  new Chart(wasteCtx, {
+    type: 'line',
+    data: {
+      labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+      datasets: [{
+        label: 'Waste (Million Tonnes)',
+        data: [92, 94, 97, 100, 105, 110, 112, 115],
+        borderColor: '#388e3c',
+        backgroundColor: 'rgba(56, 142, 60, 0.1)',
+        fill: true,
+        tension: 0.4,
+        pointRadius: 5,
+        pointHoverRadius: 8,
+        pointBackgroundColor: '#66bb6a'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        tooltip: { enabled: true },
+        legend: {
+          display: true,
+          position: 'top'
+        }
+      },
+      animation: {
+        duration: 1500,
+        easing: 'easeInOutQuart'
+      }
+    }
+  });
+
+  const cards = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  cards.forEach(card => observer.observe(card));
+
+</script>
+
+</body>
+</html>
+

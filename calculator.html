@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoThreads - Footprint Calculator</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+<body class="quiz-page">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo3.png" alt="EcoThreads logo" style="height: 70px;">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="calculator.html" class="active">Footprint Calculator</a></li>
+        <li><a href="tips.html">Sustainable Tips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Pop-up Intro -->
+  <div id="calculatorModal" class="modal">
+    <div class="modal-content">
+      <h2>Find Out Your Fashion Footprint</h2>
+      <p>Answer these 11 questions to learn how your clothing habits impact the environment.</p>
+      <button onclick="startCalculator()">Start</button>
+    </div>
+  </div>
+
+  <!-- Calculator Container -->
+  <main id="calculatorContainer" style="display:none;">
+    <h2 style="text-align:center;">Fashion Footprint Calculator</h2>
+    <form id="calculatorForm">
+
+    <!-- Q1 -->
+    <div class="question-block">
+        <p><strong>1. How often do you buy your clothings?</strong></p>
+        <div class="option-block">
+          <input type="radio" id="q1-often1" name="q1" value="very often">
+          <label for="q1-often1">Very Often</label>
+        </div>
+        <div class="option-block">
+          <input type="radio" id="q1-often2" name="q1" value="often">
+          <label for="q1-often2">Often</label>
+        </div>
+        <div class="option-block">
+          <input type="radio" id="q1-often3" name="q1" value="moderate">
+          <label for="q1-often3">Moderate</label>
+        </div>
+        <div class="option-block">
+          <input type="radio" id="q1-often4" name="q1" value="rarely">
+          <label for="q1-often4">Rarely</label>
+        </div>
+        <div class="option-block">
+          <input type="radio" id="q1-often5" name="q1" value="very rarely">
+          <label for="q1-often5">Very Rarely</label>
+        </div>
+      </div>            
+  
+  <!-- Q2 -->
+  <div class="question">
+    <p><strong>2. How many items of clothing do you buy in a year?</strong></p>
+    <input type="range" id="q2" name="q2" min="1" max="100" value="30" oninput="updateOutputPlus('q2')">
+    <output>30</output> items
+  </div>
+  
+  <!-- Q3 -->
+  <div class="question">
+    <p><strong>3. How do you purchase your clothing?</strong></p>
+    Online Shopping: 
+    <input type="range" id="q3-online" min="0" max="100" value="50" oninput="syncQ3()">
+    <output id="q3-online-output">50</output>%<br>
+    In-Store Shopping: 
+    <input type="range" id="q3-instore" min="0" max="100" value="50" readonly>
+    <output id="q3-instore-output">50</output>%
+  </div>
+  
+  <!-- Q4 -->
+  <div class="question">
+    <p><strong>4. What percentage of your clothing purchases do you return?</strong></p>
+    <input type="range" id="q4" min="0" max="100" value="20" oninput="this.nextElementSibling.value = this.value">
+    <output>20</output>%
+  </div>
+  
+  <!-- Q5 -->
+  <div class="question">
+    <p><strong>5. What percentage of your clothing are second-hand items?</strong></p>
+    <input type="range" id="q5" min="0" max="100" value="30" oninput="this.nextElementSibling.value = this.value">
+    <output>30</output>%
+  </div>
+  
+  <!-- Q6 -->
+  <div class="question">
+    <p><strong>6. How many loads of laundry do you do per month?</strong></p>
+    <input type="range" id="q6" min="0" max="10" value="2" oninput="updateOutputPlus('q6')">
+    <output>2</output> loads
+  </div>
+  
+  <!-- Q7 -->
+  <div class="question-block">
+    <p><strong>7. What is your laundry habit?</strong></p>
+    
+    <strong>Washing:</strong>
+    <div class="option-block">
+      <input type="radio" id="wash-cold" name="wash" value="cold">
+      <label for="wash-cold">Cold Wash Only</label>
+    </div>
+    <div class="option-block">
+      <input type="radio" id="wash-warm" name="wash" value="warm">
+      <label for="wash-warm">Warm Wash Only</label>
+    </div>
+    <div class="option-block">
+      <input type="radio" id="wash-both" name="wash" value="both">
+      <label for="wash-both">Both</label>
+    </div>
+  
+    <br><strong>Drying:</strong>
+    <div class="option-block">
+      <input type="radio" id="dry-air" name="dry" value="air">
+      <label for="dry-air">Air Dry Only</label>
+    </div>
+    <div class="option-block">
+      <input type="radio" id="dry-machine" name="dry" value="machine">
+      <label for="dry-machine">Machine Dry Only</label>
+    </div>
+    <div class="option-block">
+      <input type="radio" id="dry-both" name="dry" value="both">
+      <label for="dry-both">Both</label>
+    </div>
+  </div>  
+  
+  <!-- Q8 -->
+  <div class="question">
+    <p><strong>8. How many items do you dry-clean each month?</strong></p>
+    <input type="range" id="q8" min="0" max="10" value="2" oninput="updateOutputPlus('q8')">
+    <output>2</output> items
+  </div>
+  
+  <!-- Q9 -->
+  <div class="question">
+    <p><strong>9. How many items do you repair each year?</strong></p>
+    <input type="range" id="q9" min="0" max="10" value="2" oninput="updateOutputPlus('q9')">
+    <output>2</output> items
+  </div>
+  
+  <!-- Q10 -->
+  <div class="question">
+    <p><strong>10. How do you dispose of your clothing?</strong></p>
+    Trash: 
+    <input type="range" id="q10-trash" min="0" max="100" value="50" oninput="syncQ10()">
+    <output id="q10-trash-output">50</output>%<br>
+    Resell/Donate: 
+    <input type="range" id="q10-donate" min="0" max="100" value="50" readonly>
+    <output id="q10-donate-output">50</output>%
+  </div>
+  
+  <!-- Q11 -->
+  <div class="question">
+    <p><strong>11. How many clothing items do you dispose in a year?</strong></p>
+    <input type="range" id="q11" min="0" max="100" value="20" oninput="updateOutputPlus('q11')">
+    <output>20</output> items
+  </div>
+</form>
+  
+  <!-- Submit -->
+  <div style="text-align:center; margin-top: 30px;">
+    <button type="button" class="start-btn" onclick="calculateFootprint()">Calculate</button>
+  </div>
+  
+    <div id="resultContainer" style="display:none; text-align:center; margin-top: 30px;"></div>
+  </main>
+  
+  <!-- Result Modal -->
+<div id="resultModal" class="modal" style="display: none;">
+    <div class="modal-content result-popup">
+      <div id="resultIcon" style="font-size: 48px;"></div>
+      <h2 id="resultHeading"></h2>
+      <p id="resultDescription"></p>
+      <div class="button-group">
+        <button class="start-btn" onclick="retryCalculator()">Try Again</button>
+        <button class="start-btn" onclick="window.location.href='tips.html'">Tips</button>
+      </div>        
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EcoThreads. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
